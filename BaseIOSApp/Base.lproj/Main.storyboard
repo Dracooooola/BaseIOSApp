@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KlF-j7-nau">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Главная-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BaseIOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ig-8T-iDD">
+                                <rect key="frame" x="20" y="460" width="374" height="30"/>
+                                <state key="normal" title="Передать сообщение на следующий экран"/>
+                                <connections>
+                                    <action selector="presentTextVCButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uO3-gf-HJv"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YO1-vY-5XV">
+                                <rect key="frame" x="20" y="510" width="374" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhd-Fj-LSk">
+                                        <rect key="frame" x="70.5" y="0.0" width="233" height="30"/>
+                                        <state key="normal" title="Перейти к шаригу изображений"/>
+                                        <connections>
+                                            <segue destination="LLq-82-Y8g" kind="show" id="GmO-f8-HsD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjQ-Ks-W8q">
+                                        <rect key="frame" x="42" y="38" width="290" height="30"/>
+                                        <state key="normal" title="Перейти к экрану для работы с картами"/>
+                                        <connections>
+                                            <action selector="pushMapVCButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MWX-MY-LhX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-72-MSz">
+                                        <rect key="frame" x="49" y="76" width="276" height="30"/>
+                                        <state key="normal" title="Перейти к экрану для отправки почты"/>
+                                        <connections>
+                                            <segue destination="3t6-9d-mKV" kind="show" id="RYK-Ik-lwW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vu-pU-xFQ">
+                                <rect key="frame" x="40" y="418" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YO1-vY-5XV" firstAttribute="top" secondItem="3ig-8T-iDD" secondAttribute="bottom" constant="20" id="3VP-NB-A9M"/>
+                            <constraint firstItem="YO1-vY-5XV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="58Q-jB-MrI"/>
+                            <constraint firstItem="3ig-8T-iDD" firstAttribute="top" secondItem="9vu-pU-xFQ" secondAttribute="bottom" constant="8" symbolic="YES" id="BAr-oa-p7a"/>
+                            <constraint firstItem="3ig-8T-iDD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Be9-5d-0JV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9vu-pU-xFQ" secondAttribute="trailing" constant="40" id="FiU-G0-JcY"/>
+                            <constraint firstItem="3ig-8T-iDD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="H9T-SS-weF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3ig-8T-iDD" secondAttribute="trailing" constant="20" id="Inl-gz-3O5"/>
+                            <constraint firstItem="9vu-pU-xFQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="YJn-9T-Lc8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YO1-vY-5XV" secondAttribute="trailing" constant="20" id="hw1-Nd-fg4"/>
+                            <constraint firstItem="3ig-8T-iDD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="n9p-1P-aAV"/>
+                            <constraint firstItem="YO1-vY-5XV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rFq-MZ-vDH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Главная" id="Vws-Oh-0Sm"/>
+                    <connections>
+                        <outlet property="textField" destination="9vu-pU-xFQ" id="Dy7-QS-ejX"/>
+                        <segue destination="hg9-tZ-cQY" kind="presentation" identifier="PresentTextVC" id="oLt-EB-VHY"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="93.75"/>
+        </scene>
+        <!--Шаринг-->
+        <scene sceneID="teq-OR-1xI">
+            <objects>
+                <viewController storyboardIdentifier="ImageSendViewController" id="LLq-82-Y8g" customClass="ImageSendViewController" customModule="BaseIOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Tq-ib-umu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AG9-8i-GiM">
+                                <rect key="frame" x="20" y="128" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AG9-8i-GiM" secondAttribute="height" multiplier="1:1" id="lJr-6I-Ko1"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1j-xJ-7cU">
+                                <rect key="frame" x="164.5" y="522" width="85" height="30"/>
+                                <state key="normal" title="Поделиться"/>
+                                <connections>
+                                    <action selector="shareImageButtonPressed:" destination="LLq-82-Y8g" eventType="touchUpInside" id="ev0-D1-pKG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DU1-9y-CqF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AG9-8i-GiM" firstAttribute="leading" secondItem="DU1-9y-CqF" secondAttribute="leading" constant="20" id="0fL-5C-0ou"/>
+                            <constraint firstItem="DU1-9y-CqF" firstAttribute="trailing" secondItem="AG9-8i-GiM" secondAttribute="trailing" constant="20" id="FHe-xv-iao"/>
+                            <constraint firstItem="AG9-8i-GiM" firstAttribute="top" secondItem="DU1-9y-CqF" secondAttribute="top" constant="40" id="Mss-n9-Gp0"/>
+                            <constraint firstItem="o1j-xJ-7cU" firstAttribute="top" secondItem="AG9-8i-GiM" secondAttribute="bottom" constant="20" id="N12-fs-382"/>
+                            <constraint firstItem="o1j-xJ-7cU" firstAttribute="centerX" secondItem="DU1-9y-CqF" secondAttribute="centerX" id="kto-cE-7ko"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Шаринг" id="qEo-9b-CwK"/>
+                    <connections>
+                        <outlet property="imageView" destination="AG9-8i-GiM" id="fSh-TH-3vk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWO-jg-phb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2031.8840579710147" y="-216.29464285714286"/>
+        </scene>
+        <!--MailViewController-->
+        <scene sceneID="Dy5-kT-kjd">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Mail" storyboardName="Mail" referencedIdentifier="MailViewController" id="3t6-9d-mKV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="N9V-bt-Rf1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PBL-T7-gUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="725"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="YhR-NN-nVk">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="lXl-9K-G4T" customClass="MapViewController" customModule="BaseIOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jlI-gb-c2F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gx4-fa-tDj">
+                                <rect key="frame" x="154" y="438" width="106" height="30"/>
+                                <state key="normal" title="Открыть карту"/>
+                                <connections>
+                                    <action selector="openMapButtonPressed:" destination="lXl-9K-G4T" eventType="touchUpInside" id="dz8-6h-VTk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o4B-EZ-ynV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gx4-fa-tDj" firstAttribute="centerX" secondItem="o4B-EZ-ynV" secondAttribute="centerX" id="XZc-Uv-0Uq"/>
+                            <constraint firstItem="gx4-fa-tDj" firstAttribute="centerY" secondItem="o4B-EZ-ynV" secondAttribute="centerY" id="gfp-fE-ngr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yK-ii-lsE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2031.8840579710147" y="460.71428571428567"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="Lzd-IK-RAF">
+            <objects>
+                <viewController storyboardIdentifier="TextViewController" id="hg9-tZ-cQY" customClass="TextViewController" customModule="BaseIOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aoi-aa-DMs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9c-Fb-48W">
+                                <rect key="frame" x="186" y="393.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ofA-Or-P4Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D9c-Fb-48W" firstAttribute="centerY" secondItem="ofA-Or-P4Y" secondAttribute="centerY" id="IUY-cA-nGx"/>
+                            <constraint firstItem="D9c-Fb-48W" firstAttribute="centerX" secondItem="ofA-Or-P4Y" secondAttribute="centerX" id="PSq-gw-TvA"/>
+                            <constraint firstItem="ofA-Or-P4Y" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D9c-Fb-48W" secondAttribute="trailing" constant="20" id="Wwn-YL-FOr"/>
+                            <constraint firstItem="D9c-Fb-48W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ofA-Or-P4Y" secondAttribute="leading" constant="20" id="oji-Jd-tXL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textLabel" destination="D9c-Fb-48W" id="TwQ-hb-jZo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBP-ke-XZC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032" y="-889"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mi8-9x-ffW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KlF-j7-nau" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GuP-B9-eMY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iTY-U6-gXI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfW-rg-JaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.652173913043484" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

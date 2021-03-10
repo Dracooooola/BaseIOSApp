@@ -26,11 +26,6 @@ class MailViewController: UIViewController {
 
 extension MailViewController: MFMailComposeViewControllerDelegate {
     
-//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-//        controller.dismiss(animated: true)
-//    }
-//
-    
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
          switch result {
          case .cancelled:
@@ -45,22 +40,11 @@ extension MailViewController: MFMailComposeViewControllerDelegate {
              break
          }
         self.dismiss(animated: true, completion: nil)
-      
     }
+    
 }
 
 private extension MailViewController {
-    
-    func sendMessagee() {
-        guard MFMailComposeViewController.canSendMail() else {
-            print("fuck")
-            return
-        }
-        
-        let mail = MFMailComposeViewController()
-        mail.mailComposeDelegate = self
-        present(mail, animated: true, completion: nil)
-    }
     
     func sendMessage() {
          let recipientEmail = "test@email.com"
@@ -80,11 +64,11 @@ private extension MailViewController {
          }
      }
 
-     private func createEmailUrl(to: String, subject: String, body: String) -> URL? {
+    func createEmailUrl(to: String, subject: String, body: String) -> URL? {
          let subjectEncoded = subject.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
          let bodyEncoded = body.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
 
          return URL(string: "mailto:\(to)?subject=\(subjectEncoded)&body=\(bodyEncoded)")
-     }
+    }
     
 }
